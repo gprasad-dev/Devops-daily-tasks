@@ -1,0 +1,10 @@
+Repo Name = Task-28-01-2026
+
+- Installed Oracle virtualbox on local machine.
+- Set-up the environment and network by using the advanced port forwarding rules by setting up the default "Host IP-127.0.0.1", "Host Port-2222" and "Guest port-22"
+- Name the VM username= gyana and password is same as username and runed the ubuntu.
+- Connected the ubuntu to the command prompt using the Host IP-127.0.0.1 and Host Port-2222
+- command is = ssh gyana@127.0.0.1 -p 2222
+- Knew about one new tool MobaxTerm installed is and runed it by fixing some minor issues during instalations.
+- We logging using the username and password.
+- Also installed and new tool Putty.
