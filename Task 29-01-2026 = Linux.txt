@@ -1,0 +1,461 @@
+Task 29-01-2026 = Linux
+
+				    LINUX
+										  ==============
+It was founded by Linus Torvalds in 1991
+It is an Open Source Operating System
+No Anti-virus is required for this.
+
+Different flavours of Linux are: 1) Ubuntu
+				 2) Debian
+				 3) Kali
+				 4) Parrot
+				 5) Cent
+
+Linux Commands
+
+1) cat /etc/os-release : For detailed based output of OS Informations
+Ex:-
+gyana@ubuntu:~$ cat /etc/os-release
+PRETTY_NAME="Ubuntu 22.04.5 LTS"
+NAME="Ubuntu"
+VERSION_ID="22.04"
+VERSION="22.04.5 LTS (Jammy Jellyfish)"
+VERSION_CODENAME=jammy
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=jammy
+
+2) hostnamectl : It will show the host name in a structured mannaer
+Ex:-
+gyana@ubuntu:~$ hostnamectl
+ Static hostname: ubuntu
+       Icon name: computer-vm
+         Chassis: vm
+      Machine ID: ce57d8b258d6481d83bab2993d6bc449
+         Boot ID: 4ab3b677713243349aed57c30cd1f80c
+  Virtualization: oracle
+Operating System: Ubuntu 22.04.5 LTS
+          Kernel: Linux 5.15.0-164-generic
+    Architecture: x86-64
+ Hardware Vendor: innotek GmbH
+  Hardware Model: VirtualBox
+
+3) uname -a : It will show the informations in one line
+ex:
+gyana@ubuntu:~$ uname -a
+Linux ubuntu 5.15.0-164-generic #174-Ubuntu SMP Fri Nov 14 20:25:16 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+
+4) lsb_release -a: Basic Information of OS
+ex:
+gyana@ubuntu:~$ lsb_release -a
+No LSB modules are available.
+Distributor ID: Ubuntu
+Description:    Ubuntu 22.04.5 LTS
+Release:        22.04
+Codename:       jammy
+
+5) whoami : It will display the logged in user info
+ex:
+gyana@ubuntu:~$ whoami
+gyana
+
+6) date : To display the current date
+ex:
+gyana@ubuntu:~$ date
+Thus Jan 29 03:50:18 PM UTC 2026
+
+7) cal : To display the Calender(By default it may have not installed but for installing use : "sudo apt install ncal" then use the cal command)
+ex:
+sudo apt install ncal
+
+gyana@ubuntu:~$ sudo apt install ncal
+[sudo] password for gyana:
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following NEW packages will be installed:
+
+gyana@ubuntu:~$ cal
+    January 2026
+Su Mo Tu We Th Fr Sa
+             1  2  3
+ 4  5  6  7  8  9 10
+11 12 13 14 15 16 17
+18 19 20 21 22 23 24
+25 26 27 28 29 30 31
+
+8) pwd : To display present working directory
+ex:
+gyana@ubuntu:~$ pwd
+/home/gyana
+
+9) clear: to clean the screen
+
+10) mkdir : to make directory
+syntax:
+mkdir foldername(directory name)
+ex:
+gyana@ubuntu:~$ mkdir testfolder
+gyana@ubuntu:~$ ls
+testfolder
+
+11) ls : To display the list of the files and directory in pwd
+ex:
+gyana@ubuntu:~$ ls
+testfolder
+
+12) cd : change directory
+ex: 
+gyana@ubuntu:~$ cd testfolder
+gyana@ubuntu:~/testfolder$
+
+13) cd .. : to come back from the directory
+ex:
+gyana@ubuntu:~$ cd testfolder
+gyana@ubuntu:~/testfolder$ cd ..
+gyana@ubuntu:~$
+
+14) rmdir : To remove empty directory
+syntax: 
+rmdir directory_name
+ex:
+gyana@ubuntu:~$ rmdir testfolder
+gyana@ubuntu:~$ ls
+gyana@ubuntu:~$	---> This is showing empty because the one directory(testfolder) we had created has been removed.
+
+15) rm -r dir : delete the directory if it is not empty
+ex:
+gyana@ubuntu:~$ mkdir gyana_files
+gyana@ubuntu:~$ ls
+gyana_files
+gyana@ubuntu:~$ rm -r gyana_files
+gyana@ubuntu:~$ ls
+gyana@ubuntu:~$ ---> The directory has been deleted
+
+16) mv : to rename the file and directory
+syntax:
+"mv file's_old_name new_name"
+ex:
+gyana@ubuntu:~$ mv testfolder user_folder
+gyana@ubuntu:~$ ls
+gyana_files  user_folder
+
+17)touch : to create empty files
+syntax:
+"touch file_name"
+ex:
+gyana@ubuntu:~$ touch text
+gyana@ubuntu:~$ ls
+gyana_files  text  user_folder
+
+18)rm : to remove the empty file
+	It can't remove the folder only can remove the file
+syntax:
+"rm file_name"
+ex: 
+gyana@ubuntu:~$ touch text.txt
+gyana@ubuntu:~$ ls
+gyana_files  text.txt  user_folder
+gyana@ubuntu:~$ rm text.txt
+gyana@ubuntu:~$ ls
+gyana_files  user_folder
+
+19) cat : case-1 : It will  create a file with data
+syntax:
+cat > file_name
+Enter the data use then press ctrl+d to save the data inside file. If we press "enter" the it will go to next line/row.
+ex:
+gyana@ubuntu:~$ touch text.txt
+gyana@ubuntu:~$ ls
+gyana_files  text.txt  user_folder
+gyana@ubuntu:~$ cat > text.txt
+Used 'cat' command to enter data in the text.txt file.
+gyana@ubuntu:~$ cat text.txt
+Used 'cat' command to enter data in the text.txt file.
+gyana@ubuntu:~$
+gyana@ubuntu:~$ cat > text.txt
+Testing the cat command
+Hit enter button to shift to next line.
+gyana@ubuntu:~$ ls
+gyana_files  text.txt  user_folder
+gyana@ubuntu:~$ cat text.txt			(It override the file content)
+Testing the cat command
+Hit enter button to shift to next line.   
+gyana@ubuntu:~$
+
+20) cat : case-2 : It will display the file content
+syntax"
+cat file_name
+ex:
+gyana@ubuntu:~$ cat > user_input
+Created a file using 'cat' commend and entered the data
+gyana@ubuntu:~$ cat user_input
+Created a file using 'cat' commend and entered the data
+
+21)ls -l : To display files and directories in alphabetical order(a-z)
+ex:1
+gyana@ubuntu:~$ ls -l
+total 16
+drwxrwxr-x 2 gyana gyana 4096 Jan 30 16:50 gyana_files
+-rw-rw-r-- 1 gyana gyana   64 Jan 30 17:43 text.txt
+drwxrwxr-x 2 gyana gyana 4096 Jan 30 16:50 user_folder
+-rw-rw-r-- 1 gyana gyana   56 Jan 30 17:46 user_input
+
+ex-2
+gyana@ubuntu:~$ mkdir apple_dir
+gyana@ubuntu:~$ mkdir boxing_dir domain_dir host_dir
+gyana@ubuntu:~$ ls
+apple_dir  boxing_dir  domain_dir  gyana_files  host_dir  text.txt  user_folder  user_input
+gyana@ubuntu:~$ touch trend.txt uniform.txt
+gyana@ubuntu:~$ ls
+apple_dir  boxing_dir  domain_dir  gyana_files  host_dir  text.txt  trend.txt  uniform.txt  user_folder  user_input
+gyana@ubuntu:~$ ls -l
+total 32
+drwxrwxr-x 2 gyana gyana 4096 Jan 30 17:49 apple_dir
+drwxrwxr-x 2 gyana gyana 4096 Jan 30 17:50 boxing_dir
+drwxrwxr-x 2 gyana gyana 4096 Jan 30 17:50 domain_dir
+drwxrwxr-x 2 gyana gyana 4096 Jan 30 16:50 gyana_files
+drwxrwxr-x 2 gyana gyana 4096 Jan 30 17:50 host_dir
+-rw-rw-r-- 1 gyana gyana   64 Jan 30 17:43 text.txt
+-rw-rw-r-- 1 gyana gyana    0 Jan 30 17:52 trend.txt
+-rw-rw-r-- 1 gyana gyana    0 Jan 30 17:52 uniform.txt
+drwxrwxr-x 2 gyana gyana 4096 Jan 30 16:50 user_folder
+-rw-rw-r-- 1 gyana gyana   56 Jan 30 17:46 user_input
+
+22) ls -lr : to display files and directories in reverser alpbhabetical order(z-a)
+ex:
+gyana@ubuntu:~$ ls -lr
+total 32
+-rw-rw-r-- 1 gyana gyana   56 Jan 30 17:46 user_input
+drwxrwxr-x 2 gyana gyana 4096 Jan 30 16:50 user_folder
+-rw-rw-r-- 1 gyana gyana    0 Jan 30 17:52 uniform.txt
+-rw-rw-r-- 1 gyana gyana    0 Jan 30 17:52 trend.txt
+-rw-rw-r-- 1 gyana gyana   64 Jan 30 17:43 text.txt
+drwxrwxr-x 2 gyana gyana 4096 Jan 30 17:50 host_dir
+drwxrwxr-x 2 gyana gyana 4096 Jan 30 16:50 gyana_files
+drwxrwxr-x 2 gyana gyana 4096 Jan 30 17:50 domain_dir
+drwxrwxr-x 2 gyana gyana 4096 Jan 30 17:50 boxing_dir
+drwxrwxr-x 2 gyana gyana 4096 Jan 30 17:49 apple_dir
+
+23) ls -lt : To display files & directories which is latest file or directory
+ex:
+gyana@ubuntu:~$ ls -lt
+total 32
+-rw-rw-r-- 1 gyana gyana    0 Jan 30 17:52 trend.txt
+-rw-rw-r-- 1 gyana gyana    0 Jan 30 17:52 uniform.txt
+drwxrwxr-x 2 gyana gyana 4096 Jan 30 17:50 boxing_dir
+drwxrwxr-x 2 gyana gyana 4096 Jan 30 17:50 domain_dir
+drwxrwxr-x 2 gyana gyana 4096 Jan 30 17:50 host_dir
+drwxrwxr-x 2 gyana gyana 4096 Jan 30 17:49 apple_dir
+-rw-rw-r-- 1 gyana gyana   56 Jan 30 17:46 user_input
+-rw-rw-r-- 1 gyana gyana   64 Jan 30 17:43 text.txt
+drwxrwxr-x 2 gyana gyana 4096 Jan 30 16:50 gyana_files
+drwxrwxr-x 2 gyana gyana 4096 Jan 30 16:50 user_folder
+gyana@ubuntu:~$ touch gyana.txt
+gyana@ubuntu:~$ ls -lt
+total 32
+-rw-rw-r-- 1 gyana gyana    0 Jan 30 17:56 gyana.txt
+-rw-rw-r-- 1 gyana gyana    0 Jan 30 17:52 trend.txt
+-rw-rw-r-- 1 gyana gyana    0 Jan 30 17:52 uniform.txt
+drwxrwxr-x 2 gyana gyana 4096 Jan 30 17:50 boxing_dir
+drwxrwxr-x 2 gyana gyana 4096 Jan 30 17:50 domain_dir
+drwxrwxr-x 2 gyana gyana 4096 Jan 30 17:50 host_dir
+drwxrwxr-x 2 gyana gyana 4096 Jan 30 17:49 apple_dir
+-rw-rw-r-- 1 gyana gyana   56 Jan 30 17:46 user_input
+-rw-rw-r-- 1 gyana gyana   64 Jan 30 17:43 text.txt
+drwxrwxr-x 2 gyana gyana 4096 Jan 30 16:50 gyana_files
+drwxrwxr-x 2 gyana gyana 4096 Jan 30 16:50 user_folder
+
+24) ls -ltr : To display files & directories oldest to latest file or directory.
+ex:
+gyana@ubuntu:~$ ls -ltr
+total 32
+drwxrwxr-x 2 gyana gyana 4096 Jan 30 16:50 user_folder
+drwxrwxr-x 2 gyana gyana 4096 Jan 30 16:50 gyana_files
+-rw-rw-r-- 1 gyana gyana   64 Jan 30 17:43 text.txt
+-rw-rw-r-- 1 gyana gyana   56 Jan 30 17:46 user_input
+drwxrwxr-x 2 gyana gyana 4096 Jan 30 17:49 apple_dir
+drwxrwxr-x 2 gyana gyana 4096 Jan 30 17:50 host_dir
+drwxrwxr-x 2 gyana gyana 4096 Jan 30 17:50 domain_dir
+drwxrwxr-x 2 gyana gyana 4096 Jan 30 17:50 boxing_dir
+-rw-rw-r-- 1 gyana gyana    0 Jan 30 17:52 uniform.txt
+-rw-rw-r-- 1 gyana gyana    0 Jan 30 17:52 trend.txt
+-rw-rw-r-- 1 gyana gyana    0 Jan 30 17:56 gyana.txt 
+
+25) ls -la : To display files and directories with hidden files
+ex:
+gyana@ubuntu:~$ ls -la
+total 68
+drwxr-x--- 10 gyana gyana 4096 Jan 30 17:56 .
+drwxr-xr-x  3 root  root  4096 Jan 28 16:09 ..
+drwxrwxr-x  2 gyana gyana 4096 Jan 30 17:49 apple_dir
+-rw-------  1 gyana gyana   21 Jan 28 16:52 .bash_history
+-rw-r--r--  1 gyana gyana  220 Jan  6  2022 .bash_logout
+-rw-r--r--  1 gyana gyana 3771 Jan  6  2022 .bashrc
+drwxrwxr-x  2 gyana gyana 4096 Jan 30 17:50 boxing_dir
+drwx------  2 gyana gyana 4096 Jan 28 16:10 .cache
+drwxrwxr-x  2 gyana gyana 4096 Jan 30 17:50 domain_dir
+drwxrwxr-x  2 gyana gyana 4096 Jan 30 16:50 gyana_files
+-rw-rw-r--  1 gyana gyana    0 Jan 30 17:56 gyana.txt
+drwxrwxr-x  2 gyana gyana 4096 Jan 30 17:50 host_dir
+-rw-r--r--  1 gyana gyana  807 Jan  6  2022 .profile
+drwx------  2 gyana gyana 4096 Jan 28 16:10 .ssh
+-rw-r--r--  1 gyana gyana    0 Jan 28 16:24 .sudo_as_admin_successful
+-rw-rw-r--  1 gyana gyana   64 Jan 30 17:43 text.txt
+-rw-rw-r--  1 gyana gyana    0 Jan 30 17:52 trend.txt
+-rw-rw-r--  1 gyana gyana    0 Jan 30 17:52 uniform.txt
+drwxrwxr-x  2 gyana gyana 4096 Jan 30 16:50 user_folder
+-rw-rw-r--  1 gyana gyana   56 Jan 30 17:46 user_input
+-rw-------  1 gyana gyana   52 Jan 28 16:45 .Xauthority
+
+26) ls -ltra : To display files & directories oldest to latest file or directory with hidden files.
+ex:
+gyana@ubuntu:~$ ls -ltra
+total 68
+-rw-r--r--  1 gyana gyana  807 Jan  6  2022 .profile
+-rw-r--r--  1 gyana gyana 3771 Jan  6  2022 .bashrc
+-rw-r--r--  1 gyana gyana  220 Jan  6  2022 .bash_logout
+drwxr-xr-x  3 root  root  4096 Jan 28 16:09 ..
+drwx------  2 gyana gyana 4096 Jan 28 16:10 .ssh
+drwx------  2 gyana gyana 4096 Jan 28 16:10 .cache
+-rw-r--r--  1 gyana gyana    0 Jan 28 16:24 .sudo_as_admin_successful
+-rw-------  1 gyana gyana   52 Jan 28 16:45 .Xauthority
+-rw-------  1 gyana gyana   21 Jan 28 16:52 .bash_history
+drwxrwxr-x  2 gyana gyana 4096 Jan 30 16:50 user_folder
+drwxrwxr-x  2 gyana gyana 4096 Jan 30 16:50 gyana_files
+-rw-rw-r--  1 gyana gyana   64 Jan 30 17:43 text.txt
+-rw-rw-r--  1 gyana gyana   56 Jan 30 17:46 user_input
+drwxrwxr-x  2 gyana gyana 4096 Jan 30 17:49 apple_dir
+drwxrwxr-x  2 gyana gyana 4096 Jan 30 17:50 host_dir
+drwxrwxr-x  2 gyana gyana 4096 Jan 30 17:50 domain_dir
+drwxrwxr-x  2 gyana gyana 4096 Jan 30 17:50 boxing_dir
+-rw-rw-r--  1 gyana gyana    0 Jan 30 17:52 uniform.txt
+-rw-rw-r--  1 gyana gyana    0 Jan 30 17:52 trend.txt
+-rw-rw-r--  1 gyana gyana    0 Jan 30 17:56 gyana.txt
+drwxr-x--- 10 gyana gyana 4096 Jan 30 17:56 .
+
+27) cat > existing_file : We can add data in the existing file
+ex:
+gyana@ubuntu:~$ ls
+apple_dir   domain_dir   gyana.txt  text.txt   uniform.txt  user_input
+boxing_dir  gyana_files  host_dir   trend.txt  user_folder
+gyana@ubuntu:~$ cat > gyana.txt
+Gyana is studying the linux commands
+gyana@ubuntu:~$ cat gyana.txt
+Gyana is studying the linux commands
+
+28) cat -n file_name: Will show the content with file name
+ex:
+gyana@ubuntu:~$ cat gyana.txt
+Gyana is studying the linux commands
+gyana@ubuntu:~$ cat -n gyana.txt
+     1  Gyana is studying the linux commands
+gyana@ubuntu:~$ cat text.txt
+Testing the cat command
+Hit enter button to shift to next line.
+gyana@ubuntu:~$ cat -n text.txt
+     1  Testing the cat command
+     2  Hit enter button to shift to next line.
+
+29)cat >> exising_file : Append the data to existing file
+ex:
+gyana@ubuntu:~$ cat >> gyana.txt
+This the new data I am storing in the gyana.txt file
+gyana@ubuntu:~$ cat gyana.txt
+Gyana is studying the linux commands
+This the new data I am storing in the gyana.txt file
+
+30) tac : To print the file content from top to bottom
+syntax:
+tac file_name
+ex:
+gyana@ubuntu:~$ tac gyana.txt
+This the new data I am storing in the gyana.txt file
+Gyana is studying the linux commands
+
+31) cp : to copy the data from one file to another file
+syntax:
+cp old_file_data new_file
+ex:
+gyana@ubuntu:~$ cp gyana.txt user_input
+gyana@ubuntu:~$ cat user_input
+Gyana is studying the linux commands
+This the new data I am storing in the gyana.txt file
+
+32) cat file1 file2 file3 > new_file : To copy more than one file content to another.
+ex:
+gyana@ubuntu:~$ cat trend.txt
+gyana@ubuntu:~$ cat gyana.txt
+Gyana is studying the linux commands
+This the new data I am storing in the gyana.txt file
+gyana@ubuntu:~$ cat text.txt
+Testing the cat command
+Hit enter button to shift to next line.
+gyana@ubuntu:~$ cat gyana.txt text.txt > trend.txt
+gyana@ubuntu:~$ cat trend.txt
+Gyana is studying the linux commands
+This the new data I am storing in the gyana.txt file
+Testing the cat command
+Hit enter button to shift to next line.
+
+33) wc : Word count in the file
+syntax:
+wc file_name
+ex:
+gyana@ubuntu:~$ wc gyana.txt
+ 2 17 90 gyana.txt  ----->file name
+ |  |  |           
+ |  |  -------> no. of charector
+ |  |
+ |  ----------> no. of words
+ |  
+ -------------> no. of lines
+
+34) head: To display first 10 lines of the file
+
+35) tail: To display last 10 lines of the file.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
